@@ -23,12 +23,17 @@
   transform: translateY(-100%);
 }
 
+.efeito-text-topo{
+  visibility: hidden;
+}
+
 body {
   background-color: black;
   color: white;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
-  
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;

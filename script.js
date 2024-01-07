@@ -1,6 +1,5 @@
-var questions = [
-  "Você está preparado para uma aventura que pode mudar sua vida?"
-];
+
+
 
 var cursorBackgrounds = [
   "./src/d3mlE7uhX8KFgEmY.webp",
@@ -14,29 +13,9 @@ var cursorBackgrounds = [
 var h1 = document.querySelector('h1');
 var btn = document.querySelector('.button');
 
-function init() {
-  btn.addEventListener('click', function() {
-    newQuestion();
-  })
-  
-  newQuestion();
-}
 
-function newQuestion() {
-  h1.innerHTML = questions[Math.floor(Math.random() * questions.length)];
-  var tl = gsap.timeline(), mySplitText = new SplitText(h1, {type: "words,chars"}), chars = mySplitText.chars;
 
-  tl.from(chars, {
-    duration: 0.5,
-    opacity: 0,
-    scale: 0,
-    y: 80,
-    rotationX: 150,
-    transformOrigin: "0% 50% -50",
-    ease: "back",
-    stagger: 0.01
-  }); 
-}
+
 
 var cursor = document.querySelector('.cursor');
 
@@ -74,4 +53,10 @@ $('.button').mouseleave(function() {
   $('.cursor').css('display', 'none');
 });
 
-window.onload = init;
+window.revelar = ScrollReveal({reset:true})
+
+revelar.reveal('.efeito-text-topo',
+{
+  duration:2000,
+  distance: '60px'
+})
