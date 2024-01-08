@@ -1,6 +1,3 @@
-
-
-
 var cursorBackgrounds = [
   "./src/d3mlE7uhX8KFgEmY.webp",
   "./src/kPtv3UIPrv36cjxqLs.webp",
@@ -14,7 +11,13 @@ var h1 = document.querySelector('h1');
 var btn = document.querySelector('.button');
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  var redirectButton = document.getElementById('redirectButton');
 
+  redirectButton.addEventListener('click', function () {
+      window.location.href = 'indexplay.html';
+  });
+});
 
 
 var cursor = document.querySelector('.cursor');
