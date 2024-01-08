@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./html/css/main.css">
+	<script src="./html/js/app.js" defer></script>
+	<script src="./html/libs/rain.js" defer></script>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Neuton|Oswald'>
+	<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+
+	<style>
+	
+
+		.displayOne{
+			text-align: center;
+			color: rgba(255, 255, 255, 0.25);
+			font: 400 1em/1.5 "Neuton";
+		}
+		
+		.displayOne p {
+		  text-transform: uppercase;
+		  letter-spacing: 0.5em;
+		  display: inline-block;
+		  border: 4px double rgba(255, 255, 255, 0.25);
+		  border-width: 4px 0;
+		  padding: 1.5em 0em;
+		  position: absolute;
+		  top: 5%;
+		  left: 50%;
+		  width: 40em;
+		  margin: 0 0 0 -20em;
+		}
+		.displayOne p span {
+		  font: 700 4em/1 "Oswald", sans-serif;
+		  letter-spacing: 0;
+		  padding: 0.25em 0 0.325em;
+		  display: block;
+		  margin: 0 auto;
+		  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+		  /* Clip Background Image */
+		  background: url(./img/Design\ sem\ nome.png) repeat-y;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		  /* Animate Background Image */
+		  -webkit-text-fill-color: transparent;
+		  -webkit-animation: aitf 80s linear infinite;
+		  /* Activate hardware acceleration for smoother animations */
+		  -webkit-transform: translate3d(0, 0, 0);
+		  -webkit-backface-visibility: hidden;
+		}
+		
+		/* Animate Background Image */
+		@-webkit-keyframes aitf {
+		  0% {
+			background-position: 0% 50%;
+		  }
+		  100% {
+			background-position: 100% 50%;
+		  }
+		}
+	  
+	  
+		.video-container {
+		  position: absolute;
+		  top: 65%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  width: 800px;
+		  overflow: hidden;
+		 
+	  }
+	  
+	  video {
+		  width: 100%;
+		  height: auto;
+		
+	  }
+	  
+	  
+	  #playButton {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  cursor: pointer;
+		  display: none;
+	  }
+	  
+	  .buttonPlay{
+		  width: 200px;
+		 left: auto;
+		 right: auto;
+		   height: auto;
+	  }
+	  
+	  .buttonPause{
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  width: 200px;
+		  height: auto;
+		  cursor: pointer;
+	  }
+	  
+	  
+	  .fullScreen{
+		  position: absolute;
+		  top: 82%;
+		  left: 95%;
+		  transform: translate(-50%, -50%);
+		  width: 35px;
+		  height: auto;
+	  }
+	  
+	  .fullScreen{
+		  cursor: pointer;
+	  }
+	
+	
+	   </style>
+
+
+
+	<div class="displayOne">
+		<p class="efeito-text-topo">
+			<span>
+			  TEMPO DE DECISÃO
+			</span>
+			&mdash; Josué 24:15 &mdash;
+		  </p>
+		
+			<div class="video-container" id="videoContainer">
+				<video id="myVideo" src="./video/Vídeo do WhatsApp de 2024-01-07 à(s) 18.14.00_a3b34929.mp4"></video>
+				<img id="playButton" class="buttonPlay" src="./img/play (1).png" alt="Play">
+				<img id="pauseButton" class="buttonPause" src="./img/pause (1).png" alt="Pause" style="display: none;">
+				<img id="fullscreenButton" class="fullScreen" src="./img/expand (1).png" alt="Fullscreen" style="display: none;">
+			</div>
+		
+	</div>
+		
+<div class="displaytwo">
+	<section class="layers">
+			<div class="layers__container">
+				<div class="layers__item layer-1" style="background-image: url(img/layer-1.jpg);"></div>
+				<div class="layers__item layer-2" style="background-image: url(img/layer-2.png);"></div>
+				<div class="layers__item layer-3">
+					<div class="hero-content">
+						<h1>A história humana é a longa e terrível história
+							<span>  do homem tentando encontrar outro 
+								</span>
+							<span>além de Deus para fazê-lo feliz.</span></h1>
+						<div class="hero-content__p">- C.S Lewis</div>
+					
+					</div>
+				</div>
+				<div class="layers__item layer-4">
+					<canvas class="rain"></canvas>
+				</div>
+				<div class="layers__item layer-5" style="background-image: url(img/layer-5.png);"></div>
+				<div class="layers__item layer-6" style="background-image: url(img/layer-6.png);"></div>
+			</div>
+		</section>
+	</div>
+
+		
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var videoContainer = document.getElementById('videoContainer');
+			var video = document.getElementById('myVideo');
+			var playButton = document.getElementById('playButton');
+			var pauseButton = document.getElementById('pauseButton');
+			var fullscreenButton = document.getElementById('fullscreenButton');
+		
+			videoContainer.addEventListener('mouseenter', function () {
+				if (video.paused) {
+					playButton.style.display = 'block';
+				} else {
+					pauseButton.style.display = 'block';
+					fullscreenButton.style.display = 'block';
+				}
+			});
+		
+			videoContainer.addEventListener('mouseleave', function () {
+				playButton.style.display = 'none';
+				pauseButton.style.display = 'none';
+				fullscreenButton.style.display = 'none';
+			});
+		
+			playButton.addEventListener('click', function () {
+				video.play();
+				playButton.style.display = 'none';
+				pauseButton.style.display = 'block';
+				fullscreenButton.style.display = 'block';
+			});
+		
+			pauseButton.addEventListener('click', function () {
+				video.pause();
+				playButton.style.display = 'block';
+				pauseButton.style.display = 'none';
+				fullscreenButton.style.display = 'block';
+			});
+		
+			fullscreenButton.addEventListener('click', function () {
+				if (video.requestFullscreen) {
+					video.requestFullscreen();
+				} else if (video.mozRequestFullScreen) {
+					video.mozRequestFullScreen();
+				} else if (video.webkitRequestFullscreen) {
+					video.webkitRequestFullscreen();
+				} else if (video.msRequestFullscreen) {
+					video.msRequestFullscreen();
+				}
+			});
+		});
+		
+		window.revelar = ScrollReveal({reset:true})
+		
+		revelar.reveal('.efeito-text-topo',
+		{
+		  duration:2000,
+		  distance: '60px'
+		})
+		
+		
+	</script>
+
+</body>
+</html>
