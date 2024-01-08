@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR" >
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>PIB rincesa Isabel</title>
- <link rel="stylesheet" href="./style.css">
- <script src="https://unpkg.com/scrollreveal"></script>
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIB rincesa Isabel</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="stylePlay.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Neuton|Oswald'><link rel="stylesheet" href="stylePlay.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="content-wrapper">
-<!--   <img class="logo no-select" src="https://mcusercontent.com/0ffed4e9418edd15ed99887a4/images/2f6e3178-7575-e2b7-533d-2a766c1faf28.gif"> -->
-  <p class="spaced heading no-select">Olá</p>
-  <h1 class="efeito-text-topo">Você está preparado para uma aventura que pode mudar sua vida?</h1>
-  <div class="button no-select" id="redirectButton" ><span>Começar aventura?</span></div>
-</div>
+   
+<p class="efeito-text-topo">
+    <span>
+      TEMPO DE DECISÃO
+    </span>
+    &mdash; Josué 24:15 &mdash;
+  </p>
+  
 
-<div class="cursor"></div>
-<!-- partial -->
 
-  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+</head>
+<body>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="./script.js"></script>
+    <div class="video-container" id="videoContainer">
+        <video id="myVideo" src="./src/Vídeo do WhatsApp de 2024-01-07 à(s) 18.14.00_a3b34929.mp4"></video>
+        <img id="playButton" class="buttonPlay" src="./src/play (1).png" alt="Play">
+        <img id="pauseButton" class="buttonPause" src="./src/pause (1).png" alt="Pause" style="display: none;">
+        <img id="fullscreenButton" class="fullScreen" src="./src/expand (1).png" alt="Fullscreen" style="display: none;">
+    </div>
 
+<script src="playscript.js"></script>
+
+  
 </body>
 </html>
